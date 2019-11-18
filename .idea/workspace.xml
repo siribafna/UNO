@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4881c685-40c6-4a3b-920a-ae59dcf54812" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Colors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Faces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Faces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/IGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DeckTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeckTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GameTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PlayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PlayerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +131,14 @@
       <option name="presentableId" value="Default" />
       <updated>1573222879436</updated>
     </task>
+    <task id="LOCAL-00001" summary="testing second commit">
+      <created>1574090464488</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574090464488</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,26 +146,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="testing second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing second commit" />
   </component>
 </project>
