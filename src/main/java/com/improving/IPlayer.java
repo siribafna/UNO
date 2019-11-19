@@ -2,8 +2,8 @@ package com.improving;
 
 public interface IPlayer {
 
-    Card draw(Game game);
+    Card draw(IGame game);
     int handSize();
-    void takeTurn(Game game) throws Exception;
+    void takeTurn(IGame game) throws Exception;
 }
 

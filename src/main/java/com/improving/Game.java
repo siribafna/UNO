@@ -5,17 +5,17 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class Game implements IGame{
+public class Game implements IGame {
     Deck deck;
     Player currentPlayer;
     List<Player> players = new ArrayList<>();
     Card topCard;
-    int turnDirection =  1;
+    int turnDirection = 1;
     int turnEngine;
     int colorIsPresent = 0;
     Optional<Colors> chosenColor;
     Player nextPlayer;
-    List<Colors> colorsList = new ArrayList<>(){{
+    List<Colors> colorsList = new ArrayList<>() {{
         add(Colors.Blue);
         add(Colors.Yellow);
         add(Colors.Red);
@@ -25,8 +25,8 @@ public class Game implements IGame{
     public Game(int totalPlayers) {
         deck = new Deck();
         deck.shuffle(deck.getDeck());
-        for(int i = 0; i < totalPlayers; i++) {
-         players.add(new Player(createHand(), i));
+        for (int i = 0; i < totalPlayers; i++) {
+            players.add(new Player(createHand(), i));
         }
     }
 
@@ -40,7 +40,6 @@ public class Game implements IGame{
         playerHand.add(draw());
         playerHand.add(draw());
         return playerHand;
-
     }
 
     public Card draw() {
@@ -49,24 +48,23 @@ public class Game implements IGame{
 
     public void play() {
 
-        topCard = draw();
+        setTopCard(draw());
         System.out.println("First: " + getTopCard());
 
         if (isWeirdCard(topCard)) {
-            setTopCard(handleWeirdCards());
+            handleWeirdCards();
         }
         turnEngine = 0;
 
         var num = turnEngine % players.size();
         setCurrentPlayer(players.get(num));
         while (!currentPlayer.myHand.isEmpty()) {
-            if(turnEngine <= 0) {
+            if (turnEngine <= 0) {
                 turnEngine = turnEngine + players.size();
             }
-            setCurrentPlayer(players.get(turnEngine % players.size()));
 
             currentPlayer.takeTurn(this);
-            if(currentPlayer.myHand.size() == 1) {
+            if (currentPlayer.myHand.size() == 1) {
                 System.out.println("Player Number #" + currentPlayer.getId() + " ***********************UNO****************************!");
             }
 
@@ -75,11 +73,12 @@ public class Game implements IGame{
                 return;
             }
             turnEngine = turnEngine + turnDirection;
+            setCurrentPlayer(players.get(turnEngine % players.size()));
         }
     }
 
     public int isValidCard(Card card) {
-        if(colorIsPresent == 0) {
+        if (colorIsPresent == 0) {
             if (card.color == Colors.Wild) {
                 return 0;
             }
@@ -88,44 +87,45 @@ public class Game implements IGame{
                 return 1;
             }
         }
-        if(colorIsPresent == 1) {
-            if(card.color.equals(getChosenColor().get())) {
+        if (colorIsPresent == 1) {
+            if (card.color.equals(getChosenColor().get())) {
                 return 1;
             }
-            if(card.color == Colors.Wild) {
+            if (card.color == Colors.Wild) {
                 return 0;
             }
         }
         return -1;
     }
 
+
     public boolean isWeirdCard(Card card) {
-        if(card.face == Faces.Draw4)
+        if (card.face == Faces.Draw4)
             return true;
-        if(card.face == Faces.Draw2)
+        if (card.face == Faces.Draw2)
             return true;
-        if(card.face == Faces.Skip)
+        if (card.face == Faces.Skip)
             return true;
-        if(card.face == Faces.Reverse)
+        if (card.face == Faces.Reverse)
             return true;
-            return false;
+        return false;
     }
 
     @Override
     public boolean isPlayable(Card card) {
-        if(colorIsPresent == 0) {
+        if (colorIsPresent == 0) {
             if ((card.face == getTopCard().face) || (card.color == getTopCard().color)) {
                 return true;
             }
-            if(card.color == Colors.Wild) {
+            if (card.color == Colors.Wild) {
                 return true;
             }
         }
-        if(colorIsPresent == 1) {
-            if(card.color == Colors.Wild) {
+        if (colorIsPresent == 1) {
+            if (card.color == Colors.Wild) {
                 return true;
             }
-            if(card.color.equals((getChosenColor().get()))) {
+            if (card.color.equals((getChosenColor().get()))) {
                 return true;
             }
         }
@@ -140,9 +140,9 @@ public class Game implements IGame{
         return chosenColor;
     }
 
-    public Card handleWeirdCards() {
-        if(getTopCard().face == Faces.Draw4) {
-            if(turnEngine <= 0) {
+    public void handleWeirdCards() {
+        if (getTopCard().face == Faces.Draw4) {
+            if (turnEngine <= 0) {
                 turnEngine = turnEngine + players.size();
             }
             nextPlayer = players.get((turnEngine + turnDirection) % players.size());
@@ -152,38 +152,52 @@ public class Game implements IGame{
             nextPlayer.getMyHand().add(draw());
             nextPlayer.getMyHand().add(draw());
             turnEngine = turnEngine + turnDirection;
-            return getTopCard();
         }
-        if(getTopCard().face == Faces.Draw2) {
+        if (getTopCard().face == Faces.Draw2) {
             nextPlayer = players.get((turnEngine + turnDirection) % players.size());
             System.out.println("ID " + players.get(nextPlayer.getId()).getId() + " DRAWING TWO");
             nextPlayer.getMyHand().add(draw());
             nextPlayer.getMyHand().add(draw());
             turnEngine = turnEngine + turnDirection;
-            return getTopCard();
+
         }
-        if(getTopCard().face== Faces.Skip) {
+        if (getTopCard().face == Faces.Skip) {
             nextPlayer = players.get((turnEngine + turnDirection) % players.size());
             System.out.println("ID " + nextPlayer.getId() + " SKIPPING");
             turnEngine = turnEngine + turnDirection;
-            return getTopCard();
-        }
-        if(getTopCard().face == Faces.Reverse) {
+    }
+        if (getTopCard().face == Faces.Reverse) {
             setTurnEngine(turnDirection * -1);
-            return getTopCard();
         }
-        return null;
     }
 
     @Override
-    public void playCard(Card card, Optional<Colors> color)  {
-            if ((card.color == Colors.Wild) && (color.isPresent() == true)) {
-                if (color.equals(Optional.of(Colors.Wild))) {
-                    setChosenColor(Optional.of(Colors.Red));
-                }
-                else
-                    setChosenColor(Optional.of(color).orElse(null));
+    public void playCard(Card card, Optional<Colors> color) {
+
+        if ((card.color == Colors.Wild) && (color.isPresent() == true)) {
+            setColorIsPresent(1);
+            var temp = card;
+            setTopCard(card);
+            System.out.println("ID: " + currentPlayer.id + " Playing..." + card);
+          //  game.playCard(card, Optional.of(getMostCommonColor()));
+            if (isWeirdCard(temp)) {
+                handleWeirdCards();
             }
+            if (color.equals(Optional.of(Colors.Wild))) {
+                setChosenColor(Optional.of(Colors.Red));
+            } else
+                setChosenColor(Optional.of(color).orElse(null));
+        }
+        else {
+            setColorIsPresent(0);
+            var temp = card;
+            setTopCard(temp);
+            System.out.println("ID: " + currentPlayer.id + " Playing..." + card);
+            if (isWeirdCard(temp)) {
+                handleWeirdCards();
+            }
+
+        }
         deck.addDiscarded(card);
         currentPlayer.myHand.remove(card);
     }
@@ -194,27 +208,35 @@ public class Game implements IGame{
     public int getTurnEngine() {
         return turnEngine;
     }
+
     public void setTurnEngine(int turnEngine) {
         this.turnEngine = turnEngine;
     }
+
     public void setTopCard(Card card) {
         this.topCard = card;
     }
+
     public Card getTopCard() {
         return topCard;
     }
+
     public Player getNextPlayer() {
         return nextPlayer;
     }
+
     public void setNextPlayer(Player nextPlayer) {
         this.nextPlayer = nextPlayer;
     }
+
     public Player getCurrentPlayer() {
         return currentPlayer;
     }
+
     public void setCurrentPlayer(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
     }
+
     public void setColorIsPresent(int colorIsPresent) {
         this.colorIsPresent = colorIsPresent;
     }

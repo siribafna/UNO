@@ -27,10 +27,10 @@ public class Player implements IPlayer{
     }
 
     @Override
-    public Card draw(Game game) {
-        var card = game.getDeck().draw();
-        myHand.add(card);
-        return card;
+    public Card draw(IGame game) {
+        var temp = game.draw();
+        myHand.add(temp);
+        return temp;
     }
 
     @Override
@@ -39,61 +39,17 @@ public class Player implements IPlayer{
     }
 
     @Override
-    public void takeTurn(Game game) {
-        var firstCard = game.getTopCard();
+    public void takeTurn(IGame game) {
         if(!this.myHand.isEmpty()) {
             this.showMyCards();
-            System.out.println(findBestSuggestedCard());
-            if(game.isPlayable(findBestSuggestedCard())) {
-                if(game.isValidCard(findBestSuggestedCard()) == 1) {
-                    game.setColorIsPresent(0);
-                    var temp = findBestSuggestedCard();
-                    game.setTopCard(temp);
-                    System.out.println("ID: " + this.id + " Playing..." + findBestSuggestedCard());
-                    game.playCard(findBestSuggestedCard(), null);
-                    if (game.isWeirdCard(temp)) {
-                        game.setTopCard(game.handleWeirdCards());
-                    }
-                    return;
-                }
-                if (game.isValidCard(findBestSuggestedCard()) == 0) {
-                    game.setColorIsPresent(1);
-                    var temp = findBestSuggestedCard();
-                    game.setTopCard(findBestSuggestedCard());
-                    System.out.println("ID: " + this.id + " Playing..." + findBestSuggestedCard());
-                    game.playCard(findBestSuggestedCard(), Optional.of(Colors.Wild));
-                    if (game.isWeirdCard(temp)) {
-                        game.setTopCard(game.handleWeirdCards());
-                    }
-                    return;
-                }
-
-            }
-            else {
-                for (Card e : myHand) {
-                    if (game.isPlayable(e) == true) {
-                        if (game.isValidCard(e) == 1) {
-                            game.setColorIsPresent(0);
-                            var temp = e;
-                            game.setTopCard(temp);
-                            System.out.println("ID: " + this.id + " Playing..." + e);
-                            game.playCard(e, null);
-                            if (game.isWeirdCard(temp)) {
-                                game.setTopCard(game.handleWeirdCards());
-                            }
-                            return;
-                        }
-                        if (game.isValidCard(e) == 0) {
-                            game.setColorIsPresent(1);
-                            var temp = e;
-                            game.setTopCard(e);
-                            System.out.println("ID: " + this.id + " Playing..." + e);
-                            game.playCard(e, Optional.of(getMostCommonColor()));
-                            if (game.isWeirdCard(temp)) {
-                                game.setTopCard(game.handleWeirdCards());
-                            }
-                            return;
-                        }
+            for(Card e: myHand) {
+                if(game.isPlayable(e)) {
+                    if (e.color == Colors.Wild) {
+                        game.playCard(e, Optional.of(Colors.Wild));
+                        return;
+                    } else {
+                        game.playCard(e, null);
+                        return;
                     }
                 }
             }
