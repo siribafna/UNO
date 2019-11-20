@@ -46,7 +46,13 @@ public class Game implements IGame {
         return deck.draw();
     }
 
-    public void play() {
+    @Override
+    public List<IPlayerInfo> getPlayerInfo() {
+        return null;
+    }
+
+    @Override
+    public void play(int numPlayers) {
 
         setTopCard(draw());
         System.out.println("First: " + getTopCard());
@@ -76,28 +82,6 @@ public class Game implements IGame {
             setCurrentPlayer(players.get(turnEngine % players.size()));
         }
     }
-
-    public int isValidCard(Card card) {
-        if (colorIsPresent == 0) {
-            if (card.color == Colors.Wild) {
-                return 0;
-            }
-
-            if ((card.face == getTopCard().face) || (card.color == getTopCard().color)) {
-                return 1;
-            }
-        }
-        if (colorIsPresent == 1) {
-            if (card.color.equals(getChosenColor().get())) {
-                return 1;
-            }
-            if (card.color == Colors.Wild) {
-                return 0;
-            }
-        }
-        return -1;
-    }
-
 
     public boolean isWeirdCard(Card card) {
         if (card.face == Faces.Draw4)
@@ -185,8 +169,11 @@ public class Game implements IGame {
             }
             if (color.equals(Optional.of(Colors.Wild))) {
                 setChosenColor(Optional.of(Colors.Red));
-            } else
+            } else {
                 setChosenColor(Optional.of(color).orElse(null));
+            }
+            System.out.println("Setting color to...." + getChosenColor().get());
+
         }
         else {
             setColorIsPresent(0);
@@ -221,8 +208,24 @@ public class Game implements IGame {
         return topCard;
     }
 
-    public Player getNextPlayer() {
-        return nextPlayer;
+    @Override
+    public IPlayerInfo getNextPlayer() {
+        return players.get((turnEngine + turnDirection) % players.size());
+    }
+
+    @Override
+    public IPlayerInfo getPreviousPlayer() {
+        return players.get((turnEngine - turnDirection) % players.size());
+    }
+
+    @Override
+    public IPlayerInfo getNextNextPlayer() {
+        return players.get((turnEngine + turnDirection + turnDirection) % players.size());
+    }
+
+    @Override
+    public IDeck getDeckInfo() {
+        return null;
     }
 
     public void setNextPlayer(Player nextPlayer) {

@@ -38,7 +38,7 @@ public class DeckTests {
     @Test
     public void deck_draw_should_add_to_discard() {
         deck.draw();
-        int result = deck.getDiscarded().size();
+        int result = deck.getDiscardPile().size();
         assertEquals(1, result);
     }
 

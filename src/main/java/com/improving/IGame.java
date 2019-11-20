@@ -4,11 +4,21 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IGame {
-    void playCard(Card card, Optional<Colors> color);
+    public void playCard(Card card, Optional<Colors> color);
+
     boolean isPlayable(Card card);
-  //  public List<Integer> getPlayerHandSizes();
+
     public Card draw();
 
+    public void play(int numPlayers);
 
+    public List<IPlayerInfo> getPlayerInfo();
 
+    public IPlayerInfo getNextPlayer();
+
+    public IPlayerInfo getPreviousPlayer();
+
+    public IPlayerInfo getNextNextPlayer();
+
+    public IDeck getDeckInfo();
 }

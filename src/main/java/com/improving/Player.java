@@ -41,11 +41,37 @@ public class Player implements IPlayer{
     @Override
     public void takeTurn(IGame game) {
         if(!this.myHand.isEmpty()) {
-            this.showMyCards();
+            int playBasedOnPlayer = playBasedOnPlayers(game.getPreviousPlayer().handsize(),game.getNextPlayer().handsize(), game.getNextNextPlayer().handsize());
+            if(playBasedOnPlayer == 1) {
+                for(Card e: myHand) {
+                    if((e.face == Faces.Reverse) || (e.face == Faces.Draw4) || (e.face == Faces.Draw2)) {
+                        if(game.isPlayable(e)) {
+                            if(e.color == Colors.Wild) {
+                                game.playCard(e, Optional.of(getMostCommonColor()));
+                                return;
+                            }
+                            {
+                                game.playCard(e, null);
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(game.isPlayable(findBestSuggestedCard())) {
+                if (findBestSuggestedCard().color == Colors.Wild) {
+                    game.playCard(findBestSuggestedCard(), Optional.of(Colors.Wild));
+                    return;
+                } else {
+                    game.playCard(findBestSuggestedCard(), null);
+                    return;
+                }
+            }
             for(Card e: myHand) {
                 if(game.isPlayable(e)) {
                     if (e.color == Colors.Wild) {
-                        game.playCard(e, Optional.of(Colors.Wild));
+                        game.playCard(e, Optional.of(getMostCommonColor()));
                         return;
                     } else {
                         game.playCard(e, null);
@@ -57,6 +83,14 @@ public class Player implements IPlayer{
             System.out.println("ID: " + id + " Drawing!");
         }
         return;
+    }
+
+    public int playBasedOnPlayers(int previous, int next, int nextnext) {
+        if(next <=2) {
+            System.out.println("Watch out, next player is almost going to win!");
+           return 1;
+        }
+        return 0;
     }
 
     public void setMostCommonColor(Colors mostCommonColor) {
@@ -116,5 +150,10 @@ public class Player implements IPlayer{
             return Colors.Yellow;
         }
         else return null;
+    }
+
+    @Override
+    public int handsize() {
+        return myHand.size();
     }
 }

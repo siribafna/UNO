@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Deck {
+public class Deck implements IDeck {
 
     private List<Card> deck = new ArrayList<Card>(112);
     private List<Card> discarded = new ArrayList<Card>();
@@ -55,7 +55,7 @@ public class Deck {
         }
 
         var card = deck.get(0);
-        getDiscarded().add(card);
+        getDiscardPile().add(card);
         deck.remove(card);
         return card;
 
@@ -65,11 +65,17 @@ public class Deck {
         this.discarded.add(card);
     }
 
-    public List<Card> getDiscarded() {
-        return discarded;
-    }
-
     public void setDiscarded(List<Card> discarded) {
         this.discarded = discarded;
+    }
+
+    @Override
+    public int getDrawPileSize() {
+        return deck.size();
+    }
+
+    @Override
+    public List<Card> getDiscardPile() {
+        return discarded;
     }
 }

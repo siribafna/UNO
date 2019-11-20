@@ -19,6 +19,6 @@ public class Application {
         int playersNum = scan.nextInt();
 
         Game game = new Game(playersNum);
-        game.play();
+        game.play(5);
     }
 }

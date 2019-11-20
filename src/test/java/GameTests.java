@@ -44,7 +44,7 @@ public class GameTests {
     public void game_handles_weird_cards_with_draw4() {
         game.setTopCard(new Card(Colors.Wild, Faces.Draw4));
         game.handleWeirdCards();
-        var result = game.getNextPlayer().getMyHand().size();
+        var result = game.getNextPlayer().handsize();
         assertEquals(11, result);
     }
 
@@ -52,7 +52,7 @@ public class GameTests {
     public void game_handles_weird_cards_with_draw2() {
         game.setTopCard(new Card(Colors.Red, Faces.Draw2));
         game.handleWeirdCards();
-        var result = game.getNextPlayer().getMyHand().size();
+        var result = game.getNextPlayer().handsize();
         assertEquals(9, result);
     }
 

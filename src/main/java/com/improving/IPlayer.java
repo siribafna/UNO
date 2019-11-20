@@ -1,6 +1,6 @@
 package com.improving;
 
-public interface IPlayer {
+public interface IPlayer extends IPlayerInfo {
 
     Card draw(IGame game);
     int handSize();

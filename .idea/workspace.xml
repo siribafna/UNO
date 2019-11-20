@@ -2,34 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4881c685-40c6-4a3b-920a-ae59dcf54812" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/IPlayerInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/IDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/IGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/IPlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IPlayerInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DeckTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeckTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GameTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PlayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PlayerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Card.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Colors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Faces.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Game$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/IGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/IPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/DeckTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DeckTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/GameTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GameTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PlayerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PlayerTests.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="uno_project" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -154,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574103496157</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implemented interfaces and corrected responsibilities">
+      <created>1574174688110</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574174688110</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +174,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing second commit" />
     <MESSAGE value="added a little smartness to the player: findSuggestedBestCard();" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a little smartness to the player: findSuggestedBestCard();" />
+    <MESSAGE value="implemented interfaces and corrected responsibilities" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented interfaces and corrected responsibilities" />
   </component>
 </project>
