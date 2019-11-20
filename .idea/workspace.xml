@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4881c685-40c6-4a3b-920a-ae59dcf54812" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/IDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/IGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/IPlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/IPlayerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DeckTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeckTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DeckTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DeckTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GameTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GameTests.class" afterDir="false" />
-    </list>
+    <list default="true" id="4881c685-40c6-4a3b-920a-ae59dcf54812" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574174688110</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding strategy to player's plays">
+      <created>1574260960662</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574260960662</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adding strategy to player's plays">
+      <created>1574260974692</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574260974692</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +175,8 @@
     <MESSAGE value="testing second commit" />
     <MESSAGE value="added a little smartness to the player: findSuggestedBestCard();" />
     <MESSAGE value="implemented interfaces and corrected responsibilities" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented interfaces and corrected responsibilities" />
+    <MESSAGE value="making player smarter" />
+    <MESSAGE value="adding strategy to player's plays" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding strategy to player's plays" />
   </component>
 </project>
